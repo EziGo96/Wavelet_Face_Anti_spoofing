@@ -1,0 +1,236 @@
+Model: "Conv_block"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ inputs (InputLayer)         [(None, 80, 80, 3)]       0         
+                                                                 
+ zero_padding2d (ZeroPadding  (None, 82, 82, 3)        0         
+ 2D)                                                             
+                                                                 
+ conv2d (Conv2D)             (None, 40, 40, 32)        864       
+                                                                 
+ batch_normalization (BatchN  (None, 40, 40, 32)       128       
+ ormalization)                                                   
+                                                                 
+ p_re_lu (PReLU)             (None, 40, 40, 32)        51200     
+                                                                 
+=================================================================
+Total params: 52,192
+Trainable params: 52,128
+Non-trainable params: 64
+_________________________________________________________________
+Model: "Linear_conv_block"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ inputs (InputLayer)         [(None, 5, 5, 512)]       0         
+                                                                 
+ conv2d_1 (Conv2D)           (None, 1, 1, 512)         12800     
+                                                                 
+ batch_normalization_1 (Batc  (None, 1, 1, 512)        2048      
+ hNormalization)                                                 
+                                                                 
+=================================================================
+Total params: 14,848
+Trainable params: 13,824
+Non-trainable params: 1,024
+_________________________________________________________________
+Model: "DepthWise"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ inputs (InputLayer)         [(None, 40, 40, 32)]      0         
+                                                                 
+ conv1 (Functional)          (None, 40, 40, 103)       168508    
+                                                                 
+ conv2 (Functional)          (None, 20, 20, 103)       42539     
+                                                                 
+ Linear_conv_block (Function  (None, 20, 20, 64)       6848      
+ al)                                                             
+                                                                 
+=================================================================
+Total params: 217,895
+Trainable params: 217,355
+Non-trainable params: 540
+_________________________________________________________________
+Model: "SEModule"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ inputs (InputLayer)            [(None, 20, 20, 64)  0           []                               
+                                ]                                                                 
+                                                                                                  
+ adaptive_average_pooling2d (Ad  (None, 1, 1, 64)    0           ['inputs[0][0]']                 
+ aptiveAveragePooling2D)                                                                          
+                                                                                                  
+ conv2d_5 (Conv2D)              (None, 1, 1, 16)     1024        ['adaptive_average_pooling2d[0][0
+                                                                 ]']                              
+                                                                                                  
+ batch_normalization_5 (BatchNo  (None, 1, 1, 16)    64          ['conv2d_5[0][0]']               
+ rmalization)                                                                                     
+                                                                                                  
+ re_lu (ReLU)                   (None, 1, 1, 16)     0           ['batch_normalization_5[0][0]']  
+                                                                                                  
+ conv2d_6 (Conv2D)              (None, 1, 1, 64)     1024        ['re_lu[0][0]']                  
+                                                                                                  
+ batch_normalization_6 (BatchNo  (None, 1, 1, 64)    256         ['conv2d_6[0][0]']               
+ rmalization)                                                                                     
+                                                                                                  
+ tf.math.sigmoid (TFOpLambda)   (None, 1, 1, 64)     0           ['batch_normalization_6[0][0]']  
+                                                                                                  
+ tf.math.multiply (TFOpLambda)  (None, 20, 20, 64)   0           ['tf.math.sigmoid[0][0]',        
+                                                                  'inputs[0][0]']                 
+                                                                                                  
+==================================================================================================
+Total params: 2,368
+Trainable params: 2,208
+Non-trainable params: 160
+__________________________________________________________________________________________________
+Model: "DepthWiseSE"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ inputs (InputLayer)            [(None, 20, 20, 64)  0           []                               
+                                ]                                                                 
+                                                                                                  
+ conv1 (Functional)             (None, 20, 20, 13)   6084        ['inputs[0][0]']                 
+                                                                                                  
+ conv2 (Functional)             (None, 20, 20, 13)   5369        ['conv1[0][0]']                  
+                                                                                                  
+ Linear_conv_block (Functional)  (None, 20, 20, 64)  1088        ['conv2[0][0]']                  
+                                                                                                  
+ SEModule (Functional)          (None, 20, 20, 64)   2368        ['Linear_conv_block[0][0]']      
+                                                                                                  
+ tf.__operators__.add (TFOpLamb  (None, 20, 20, 64)  0           ['SEModule[0][0]',               
+ da)                                                              'inputs[0][0]']                 
+                                                                                                  
+==================================================================================================
+Total params: 14,909
+Trainable params: 14,569
+Non-trainable params: 340
+__________________________________________________________________________________________________
+Model: "DepthWiseSE"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ inputs (InputLayer)            [(None, 20, 20, 64)  0           []                               
+                                ]                                                                 
+                                                                                                  
+ conv1 (Functional)             (None, 20, 20, 13)   6084        ['inputs[0][0]']                 
+                                                                                                  
+ conv2 (Functional)             (None, 20, 20, 13)   5369        ['conv1[0][0]']                  
+                                                                                                  
+ Linear_conv_block (Functional)  (None, 20, 20, 64)  1088        ['conv2[0][0]']                  
+                                                                                                  
+ SEModule (Functional)          (None, 20, 20, 64)   2368        ['Linear_conv_block[0][0]']      
+                                                                                                  
+ tf.__operators__.add (TFOpLamb  (None, 20, 20, 64)  0           ['SEModule[0][0]',               
+ da)                                                              'inputs[0][0]']                 
+                                                                                                  
+==================================================================================================
+Total params: 14,909
+Trainable params: 14,569
+Non-trainable params: 340
+__________________________________________________________________________________________________
+Model: "FTGenerator"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ inputs (InputLayer)         [(None, 10, 10, 128)]     0         
+                                                                 
+ zero_padding2d_13 (ZeroPadd  (None, 12, 12, 128)      0         
+ ing2D)                                                          
+                                                                 
+ conv2d_30 (Conv2D)          (None, 10, 10, 128)       147584    
+                                                                 
+ batch_normalization_30 (Bat  (None, 10, 10, 128)      512       
+ chNormalization)                                                
+                                                                 
+ re_lu_5 (ReLU)              (None, 10, 10, 128)       0         
+                                                                 
+ zero_padding2d_14 (ZeroPadd  (None, 12, 12, 128)      0         
+ ing2D)                                                          
+                                                                 
+ conv2d_31 (Conv2D)          (None, 10, 10, 64)        73792     
+                                                                 
+ batch_normalization_31 (Bat  (None, 10, 10, 64)       256       
+ chNormalization)                                                
+                                                                 
+ re_lu_6 (ReLU)              (None, 10, 10, 64)        0         
+                                                                 
+ zero_padding2d_15 (ZeroPadd  (None, 12, 12, 64)       0         
+ ing2D)                                                          
+                                                                 
+ conv2d_32 (Conv2D)          (None, 10, 10, 1)         577       
+                                                                 
+ batch_normalization_32 (Bat  (None, 10, 10, 1)        4         
+ chNormalization)                                                
+                                                                 
+ re_lu_7 (ReLU)              (None, 10, 10, 1)         0         
+                                                                 
+=================================================================
+Total params: 222,725
+Trainable params: 222,339
+Non-trainable params: 386
+_________________________________________________________________
+Model: "WTGenerator"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ inputs (InputLayer)         [(None, 10, 10, 128)]     0         
+                                                                 
+ zero_padding2d_16 (ZeroPadd  (None, 12, 12, 128)      0         
+ ing2D)                                                          
+                                                                 
+ conv2d_33 (Conv2D)          (None, 10, 10, 256)       295168    
+                                                                 
+ batch_normalization_33 (Bat  (None, 10, 10, 256)      1024      
+ chNormalization)                                                
+                                                                 
+ re_lu_8 (ReLU)              (None, 10, 10, 256)       0         
+                                                                 
+ zero_padding2d_17 (ZeroPadd  (None, 12, 12, 256)      0         
+ ing2D)                                                          
+                                                                 
+ conv2d_34 (Conv2D)          (None, 10, 10, 128)       295040    
+                                                                 
+ batch_normalization_34 (Bat  (None, 10, 10, 128)      512       
+ chNormalization)                                                
+                                                                 
+ re_lu_9 (ReLU)              (None, 10, 10, 128)       0         
+                                                                 
+ zero_padding2d_18 (ZeroPadd  (None, 12, 12, 128)      0         
+ ing2D)                                                          
+                                                                 
+ conv2d_35 (Conv2D)          (None, 10, 10, 128)       147584    
+                                                                 
+ batch_normalization_35 (Bat  (None, 10, 10, 128)      512       
+ chNormalization)                                                
+                                                                 
+ re_lu_10 (ReLU)             (None, 10, 10, 128)       0         
+                                                                 
+ zero_padding2d_19 (ZeroPadd  (None, 12, 12, 128)      0         
+ ing2D)                                                          
+                                                                 
+ conv2d_36 (Conv2D)          (None, 10, 10, 64)        73792     
+                                                                 
+ batch_normalization_36 (Bat  (None, 10, 10, 64)       256       
+ chNormalization)                                                
+                                                                 
+ re_lu_11 (ReLU)             (None, 10, 10, 64)        0         
+                                                                 
+ zero_padding2d_20 (ZeroPadd  (None, 12, 12, 64)       0         
+ ing2D)                                                          
+                                                                 
+ conv2d_37 (Conv2D)          (None, 10, 10, 4)         2308      
+                                                                 
+ batch_normalization_37 (Bat  (None, 10, 10, 4)        16        
+ chNormalization)                                                
+                                                                 
+ re_lu_12 (ReLU)             (None, 10, 10, 4)         0         
+                                                                 
+=================================================================
+Total params: 816,212
+Trainable params: 815,052
+Non-trainable params: 1,160
+_________________________________________________________________

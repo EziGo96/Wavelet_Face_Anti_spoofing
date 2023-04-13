@@ -1,0 +1,143 @@
+
+Model: "FASNet"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ inputs (InputLayer)         [(None, 80, 80, 3)]       0         
+                                                                 
+ conv1 (Functional)          (None, 40, 40, 32)        52192     
+                                                                 
+ conv2 (Functional)          (None, 40, 40, 32)        51616     
+                                                                 
+ DWconv23 (Functional)       (None, 20, 20, 64)        217895    
+                                                                 
+ ResidualSE3 (Functional)    (None, 20, 20, 64)        57268     
+                                                                 
+ DWconv34 (Functional)       (None, 10, 10, 128)       164291    
+                                                                 
+ ResidualSE4 (Functional)    (None, 10, 10, 128)       254406    
+                                                                 
+ DWconv45 (Functional)       (None, 5, 5, 128)         123096    
+                                                                 
+ ResidualSE5 (Functional)    (None, 5, 5, 128)         26652     
+                                                                 
+ conv6 (Functional)          (None, 5, 5, 512)         80384     
+                                                                 
+ conv6_proj (Functional)     (None, 1, 1, 512)         14848     
+                                                                 
+ flatten (Flatten)           (None, 512)               0         
+                                                                 
+ FC_layer7 (Dense)           (None, 128)               65536     
+                                                                 
+ batch_normalization_75 (Bat  (None, 128)              512       
+ chNormalization)                                                
+                                                                 
+ dropout (Dropout)           (None, 128)               0         
+                                                                 
+ FC_layer_8 (Dense)          (None, 3)                 384       
+                                                                 
+ activation (Activation)     (None, 3)                 0         
+                                                                 
+=================================================================
+Total params: 1,109,080
+Trainable params: 1,096,312
+Non-trainable params: 12,768
+_________________________________________________________________
+
+
+
+Model: "MultiFTNetSE"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ inputs (InputLayer)            [(None, 80, 80, 3)]  0           []                               
+                                                                                                  
+ conv1 (Functional)             (None, 40, 40, 32)   52192       ['inputs[0][0]']                 
+                                                                                                  
+ conv2 (Functional)             (None, 40, 40, 32)   51616       ['conv1[0][0]']                  
+                                                                                                  
+ DWconv23 (Functional)          (None, 20, 20, 64)   217895      ['conv2[0][0]']                  
+                                                                                                  
+ ResidualSE3 (Functional)       (None, 20, 20, 64)   57268       ['DWconv23[0][0]']               
+                                                                                                  
+ DWconv34 (Functional)          (None, 10, 10, 128)  164291      ['ResidualSE3[0][0]']            
+                                                                                                  
+ ResidualSE4 (Functional)       (None, 10, 10, 128)  254406      ['DWconv34[0][0]']               
+                                                                                                  
+ DWconv45 (Functional)          (None, 5, 5, 128)    123096      ['ResidualSE4[0][0]']            
+                                                                                                  
+ ResidualSE5 (Functional)       (None, 5, 5, 128)    26652       ['DWconv45[0][0]']               
+                                                                                                  
+ conv6 (Functional)             (None, 5, 5, 512)    80384       ['ResidualSE5[0][0]']            
+                                                                                                  
+ conv6_proj (Functional)        (None, 1, 1, 512)    14848       ['conv6[0][0]']                  
+                                                                                                  
+ flatten_1 (Flatten)            (None, 512)          0           ['conv6_proj[0][0]']             
+                                                                                                  
+ FC_layer7 (Dense)              (None, 128)          65536       ['flatten_1[0][0]']              
+                                                                                                  
+ batch_normalization_146 (Batch  (None, 128)         512         ['FC_layer7[0][0]']              
+ Normalization)                                                                                   
+                                                                                                  
+ dropout_1 (Dropout)            (None, 128)          0           ['batch_normalization_146[0][0]']
+                                                                                                  
+ FC_layer_8 (Dense)             (None, 3)            384         ['dropout_1[0][0]']              
+                                                                                                  
+ activation_1 (Activation)      (None, 3)            0           ['FC_layer_8[0][0]']             
+                                                                                                  
+ FTGenerator (Functional)       (None, 10, 10, 1)    222725      ['ResidualSE4[0][0]']            
+                                                                                                  
+==================================================================================================
+Total params: 1,331,805
+Trainable params: 1,318,651
+Non-trainable params: 13,154
+__________________________________________________________________________________________________
+
+
+
+Model: "MultiWTNetSE"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ inputs (InputLayer)            [(None, 80, 80, 3)]  0           []                               
+                                                                                                  
+ conv1 (Functional)             (None, 40, 40, 32)   52192       ['inputs[0][0]']                 
+                                                                                                  
+ conv2 (Functional)             (None, 40, 40, 32)   51616       ['conv1[0][0]']                  
+                                                                                                  
+ DWconv23 (Functional)          (None, 20, 20, 64)   217895      ['conv2[0][0]']                  
+                                                                                                  
+ ResidualSE3 (Functional)       (None, 20, 20, 64)   57268       ['DWconv23[0][0]']               
+                                                                                                  
+ DWconv34 (Functional)          (None, 10, 10, 128)  164291      ['ResidualSE3[0][0]']            
+                                                                                                  
+ ResidualSE4 (Functional)       (None, 10, 10, 128)  254406      ['DWconv34[0][0]']               
+                                                                                                  
+ DWconv45 (Functional)          (None, 5, 5, 128)    123096      ['ResidualSE4[0][0]']            
+                                                                                                  
+ ResidualSE5 (Functional)       (None, 5, 5, 128)    26652       ['DWconv45[0][0]']               
+                                                                                                  
+ conv6 (Functional)             (None, 5, 5, 512)    80384       ['ResidualSE5[0][0]']            
+                                                                                                  
+ conv6_proj (Functional)        (None, 1, 1, 512)    14848       ['conv6[0][0]']                  
+                                                                                                  
+ flatten_2 (Flatten)            (None, 512)          0           ['conv6_proj[0][0]']             
+                                                                                                  
+ FC_layer7 (Dense)              (None, 128)          65536       ['flatten_2[0][0]']              
+                                                                                                  
+ batch_normalization_219 (Batch  (None, 128)         512         ['FC_layer7[0][0]']              
+ Normalization)                                                                                   
+                                                                                                  
+ dropout_2 (Dropout)            (None, 128)          0           ['batch_normalization_219[0][0]']
+                                                                                                  
+ FC_layer_8 (Dense)             (None, 3)            384         ['dropout_2[0][0]']              
+                                                                                                  
+ activation_2 (Activation)      (None, 3)            0           ['FC_layer_8[0][0]']             
+                                                                                                  
+ WTGenerator (Functional)       (None, 10, 10, 4)    816212      ['ResidualSE4[0][0]']            
+                                                                                                  
+==================================================================================================
+Total params: 1,925,292
+Trainable params: 1,911,364
+Non-trainable params: 13,928
+__________________________________________________________________________________________________
