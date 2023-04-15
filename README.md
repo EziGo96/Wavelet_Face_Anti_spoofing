@@ -1,2 +1,2 @@
-# Wavelet_Face_-Anti_spoofing
+# Wavelet Face Anti spoofing
  
