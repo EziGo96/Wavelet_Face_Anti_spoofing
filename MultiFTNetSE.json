@@ -97,9 +97,12 @@
                         "activation": "linear",
                         "use_bias": false,
                         "kernel_initializer": {
-                           "class_name": "GlorotUniform",
+                           "class_name": "VarianceScaling",
                            "config": {
-                              "seed": null
+                              "scale": 2.0,
+                              "mode": "fan_out",
+                              "distribution": "truncated_normal",
+                              "seed": 42
                            }
                         },
                         "bias_initializer": {
@@ -182,7 +185,10 @@
                         },
                         "alpha_regularizer": null,
                         "alpha_constraint": null,
-                        "shared_axes": null
+                        "shared_axes": [
+                           1,
+                           2
+                        ]
                      },
                      "name": "p_re_lu",
                      "inbound_nodes": [
@@ -301,10 +307,14 @@
                         "activation": "linear",
                         "use_bias": false,
                         "kernel_initializer": {
-                           "class_name": "GlorotUniform",
+                           "class_name": "VarianceScaling",
                            "config": {
-                              "seed": null
-                           }
+                              "scale": 2.0,
+                              "mode": "fan_out",
+                              "distribution": "truncated_normal",
+                              "seed": 42
+                           },
+                           "shared_object_id": 3
                         },
                         "bias_initializer": {
                            "class_name": "Zeros",
@@ -386,7 +396,10 @@
                         },
                         "alpha_regularizer": null,
                         "alpha_constraint": null,
-                        "shared_axes": null
+                        "shared_axes": [
+                           1,
+                           2
+                        ]
                      },
                      "name": "p_re_lu_1",
                      "inbound_nodes": [
@@ -527,10 +540,14 @@
                                  "activation": "linear",
                                  "use_bias": false,
                                  "kernel_initializer": {
-                                    "class_name": "GlorotUniform",
+                                    "class_name": "VarianceScaling",
                                     "config": {
-                                       "seed": null
-                                    }
+                                       "scale": 2.0,
+                                       "mode": "fan_out",
+                                       "distribution": "truncated_normal",
+                                       "seed": 42
+                                    },
+                                    "shared_object_id": 3
                                  },
                                  "bias_initializer": {
                                     "class_name": "Zeros",
@@ -612,7 +629,10 @@
                                  },
                                  "alpha_regularizer": null,
                                  "alpha_constraint": null,
-                                 "shared_axes": null
+                                 "shared_axes": [
+                                    1,
+                                    2
+                                 ]
                               },
                               "name": "p_re_lu_2",
                               "inbound_nodes": [
@@ -731,10 +751,14 @@
                                  "activation": "linear",
                                  "use_bias": false,
                                  "kernel_initializer": {
-                                    "class_name": "GlorotUniform",
+                                    "class_name": "VarianceScaling",
                                     "config": {
-                                       "seed": null
-                                    }
+                                       "scale": 2.0,
+                                       "mode": "fan_out",
+                                       "distribution": "truncated_normal",
+                                       "seed": 42
+                                    },
+                                    "shared_object_id": 3
                                  },
                                  "bias_initializer": {
                                     "class_name": "Zeros",
@@ -816,7 +840,10 @@
                                  },
                                  "alpha_regularizer": null,
                                  "alpha_constraint": null,
-                                 "shared_axes": null
+                                 "shared_axes": [
+                                    1,
+                                    2
+                                 ]
                               },
                               "name": "p_re_lu_3",
                               "inbound_nodes": [
@@ -905,7 +932,7 @@
                                  "activation": "linear",
                                  "use_bias": false,
                                  "kernel_initializer": {
-                                    "class_name": "GlorotUniform",
+                                    "class_name": "HeUniform",
                                     "config": {
                                        "seed": null
                                     }
@@ -1155,10 +1182,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -1240,7 +1271,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_4",
                                        "inbound_nodes": [
@@ -1359,10 +1393,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -1444,7 +1482,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_5",
                                        "inbound_nodes": [
@@ -1533,7 +1574,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -1705,10 +1746,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -1825,7 +1870,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -2121,10 +2166,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -2206,7 +2255,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_6",
                                        "inbound_nodes": [
@@ -2325,10 +2377,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -2410,7 +2466,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_7",
                                        "inbound_nodes": [
@@ -2499,7 +2558,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -2671,10 +2730,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -2791,7 +2854,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -3087,10 +3150,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -3172,7 +3239,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_8",
                                        "inbound_nodes": [
@@ -3291,10 +3361,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -3376,7 +3450,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_9",
                                        "inbound_nodes": [
@@ -3465,7 +3542,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -3637,10 +3714,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -3757,7 +3838,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -4053,10 +4134,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -4138,7 +4223,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_10",
                                        "inbound_nodes": [
@@ -4257,10 +4345,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -4342,7 +4434,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_11",
                                        "inbound_nodes": [
@@ -4431,7 +4526,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -4712,10 +4807,14 @@
                                  "activation": "linear",
                                  "use_bias": false,
                                  "kernel_initializer": {
-                                    "class_name": "GlorotUniform",
+                                    "class_name": "VarianceScaling",
                                     "config": {
-                                       "seed": null
-                                    }
+                                       "scale": 2.0,
+                                       "mode": "fan_out",
+                                       "distribution": "truncated_normal",
+                                       "seed": 42
+                                    },
+                                    "shared_object_id": 3
                                  },
                                  "bias_initializer": {
                                     "class_name": "Zeros",
@@ -4797,7 +4896,10 @@
                                  },
                                  "alpha_regularizer": null,
                                  "alpha_constraint": null,
-                                 "shared_axes": null
+                                 "shared_axes": [
+                                    1,
+                                    2
+                                 ]
                               },
                               "name": "p_re_lu_12",
                               "inbound_nodes": [
@@ -4916,10 +5018,14 @@
                                  "activation": "linear",
                                  "use_bias": false,
                                  "kernel_initializer": {
-                                    "class_name": "GlorotUniform",
+                                    "class_name": "VarianceScaling",
                                     "config": {
-                                       "seed": null
-                                    }
+                                       "scale": 2.0,
+                                       "mode": "fan_out",
+                                       "distribution": "truncated_normal",
+                                       "seed": 42
+                                    },
+                                    "shared_object_id": 3
                                  },
                                  "bias_initializer": {
                                     "class_name": "Zeros",
@@ -5001,7 +5107,10 @@
                                  },
                                  "alpha_regularizer": null,
                                  "alpha_constraint": null,
-                                 "shared_axes": null
+                                 "shared_axes": [
+                                    1,
+                                    2
+                                 ]
                               },
                               "name": "p_re_lu_13",
                               "inbound_nodes": [
@@ -5090,7 +5199,7 @@
                                  "activation": "linear",
                                  "use_bias": false,
                                  "kernel_initializer": {
-                                    "class_name": "GlorotUniform",
+                                    "class_name": "HeUniform",
                                     "config": {
                                        "seed": null
                                     }
@@ -5340,10 +5449,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -5425,7 +5538,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_14",
                                        "inbound_nodes": [
@@ -5544,10 +5660,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -5629,7 +5749,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_15",
                                        "inbound_nodes": [
@@ -5718,7 +5841,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -5890,10 +6013,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -6010,7 +6137,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -6306,10 +6433,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -6391,7 +6522,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_16",
                                        "inbound_nodes": [
@@ -6510,10 +6644,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -6595,7 +6733,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_17",
                                        "inbound_nodes": [
@@ -6684,7 +6825,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -6856,10 +6997,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -6976,7 +7121,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -7272,10 +7417,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -7357,7 +7506,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_18",
                                        "inbound_nodes": [
@@ -7476,10 +7628,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -7561,7 +7717,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_19",
                                        "inbound_nodes": [
@@ -7650,7 +7809,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -7822,10 +7981,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -7942,7 +8105,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -8238,10 +8401,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -8323,7 +8490,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_20",
                                        "inbound_nodes": [
@@ -8442,10 +8612,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -8527,7 +8701,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_21",
                                        "inbound_nodes": [
@@ -8616,7 +8793,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -8788,10 +8965,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -8908,7 +9089,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -9204,10 +9385,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -9289,7 +9474,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_22",
                                        "inbound_nodes": [
@@ -9408,10 +9596,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -9493,7 +9685,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_23",
                                        "inbound_nodes": [
@@ -9582,7 +9777,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -9754,10 +9949,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -9874,7 +10073,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -10170,10 +10369,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -10255,7 +10458,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_24",
                                        "inbound_nodes": [
@@ -10374,10 +10580,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -10459,7 +10669,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_25",
                                        "inbound_nodes": [
@@ -10548,7 +10761,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -10829,10 +11042,14 @@
                                  "activation": "linear",
                                  "use_bias": false,
                                  "kernel_initializer": {
-                                    "class_name": "GlorotUniform",
+                                    "class_name": "VarianceScaling",
                                     "config": {
-                                       "seed": null
-                                    }
+                                       "scale": 2.0,
+                                       "mode": "fan_out",
+                                       "distribution": "truncated_normal",
+                                       "seed": 42
+                                    },
+                                    "shared_object_id": 3
                                  },
                                  "bias_initializer": {
                                     "class_name": "Zeros",
@@ -10914,7 +11131,10 @@
                                  },
                                  "alpha_regularizer": null,
                                  "alpha_constraint": null,
-                                 "shared_axes": null
+                                 "shared_axes": [
+                                    1,
+                                    2
+                                 ]
                               },
                               "name": "p_re_lu_26",
                               "inbound_nodes": [
@@ -11033,10 +11253,14 @@
                                  "activation": "linear",
                                  "use_bias": false,
                                  "kernel_initializer": {
-                                    "class_name": "GlorotUniform",
+                                    "class_name": "VarianceScaling",
                                     "config": {
-                                       "seed": null
-                                    }
+                                       "scale": 2.0,
+                                       "mode": "fan_out",
+                                       "distribution": "truncated_normal",
+                                       "seed": 42
+                                    },
+                                    "shared_object_id": 3
                                  },
                                  "bias_initializer": {
                                     "class_name": "Zeros",
@@ -11118,7 +11342,10 @@
                                  },
                                  "alpha_regularizer": null,
                                  "alpha_constraint": null,
-                                 "shared_axes": null
+                                 "shared_axes": [
+                                    1,
+                                    2
+                                 ]
                               },
                               "name": "p_re_lu_27",
                               "inbound_nodes": [
@@ -11207,7 +11434,7 @@
                                  "activation": "linear",
                                  "use_bias": false,
                                  "kernel_initializer": {
-                                    "class_name": "GlorotUniform",
+                                    "class_name": "HeUniform",
                                     "config": {
                                        "seed": null
                                     }
@@ -11457,10 +11684,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -11542,7 +11773,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_28",
                                        "inbound_nodes": [
@@ -11661,10 +11895,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -11746,7 +11984,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_29",
                                        "inbound_nodes": [
@@ -11835,7 +12076,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -12007,10 +12248,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -12127,7 +12372,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -12423,10 +12668,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -12508,7 +12757,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_30",
                                        "inbound_nodes": [
@@ -12627,10 +12879,14 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "VarianceScaling",
                                              "config": {
-                                                "seed": null
-                                             }
+                                                "scale": 2.0,
+                                                "mode": "fan_out",
+                                                "distribution": "truncated_normal",
+                                                "seed": 42
+                                             },
+                                             "shared_object_id": 3
                                           },
                                           "bias_initializer": {
                                              "class_name": "Zeros",
@@ -12712,7 +12968,10 @@
                                           },
                                           "alpha_regularizer": null,
                                           "alpha_constraint": null,
-                                          "shared_axes": null
+                                          "shared_axes": [
+                                             1,
+                                             2
+                                          ]
                                        },
                                        "name": "p_re_lu_31",
                                        "inbound_nodes": [
@@ -12801,7 +13060,7 @@
                                           "activation": "linear",
                                           "use_bias": false,
                                           "kernel_initializer": {
-                                             "class_name": "GlorotUniform",
+                                             "class_name": "HeUniform",
                                              "config": {
                                                 "seed": null
                                              }
@@ -13060,10 +13319,14 @@
                         "activation": "linear",
                         "use_bias": false,
                         "kernel_initializer": {
-                           "class_name": "GlorotUniform",
+                           "class_name": "VarianceScaling",
                            "config": {
-                              "seed": null
-                           }
+                              "scale": 2.0,
+                              "mode": "fan_out",
+                              "distribution": "truncated_normal",
+                              "seed": 42
+                           },
+                           "shared_object_id": 3
                         },
                         "bias_initializer": {
                            "class_name": "Zeros",
@@ -13145,7 +13408,10 @@
                         },
                         "alpha_regularizer": null,
                         "alpha_constraint": null,
-                        "shared_axes": null
+                        "shared_axes": [
+                           1,
+                           2
+                        ]
                      },
                      "name": "p_re_lu_32",
                      "inbound_nodes": [
@@ -13234,7 +13500,7 @@
                         "activation": "linear",
                         "use_bias": false,
                         "kernel_initializer": {
-                           "class_name": "GlorotUniform",
+                           "class_name": "HeUniform",
                            "config": {
                               "seed": null
                            }
@@ -13365,9 +13631,11 @@
                "activation": "linear",
                "use_bias": false,
                "kernel_initializer": {
-                  "class_name": "GlorotUniform",
+                  "class_name": "RandomNormal",
                   "config": {
-                     "seed": null
+                     "mean": 0.0,
+                     "stddev": 0.001,
+                     "seed": 42
                   }
                },
                "bias_initializer": {
@@ -13377,7 +13645,7 @@
                "kernel_regularizer": {
                   "class_name": "L2",
                   "config": {
-                     "l2": 0.019999999552965164
+                     "l2": 0.0020000000949949026
                   }
                },
                "bias_regularizer": null,
@@ -13475,9 +13743,11 @@
                "activation": "linear",
                "use_bias": false,
                "kernel_initializer": {
-                  "class_name": "GlorotUniform",
+                  "class_name": "RandomNormal",
                   "config": {
-                     "seed": null
+                     "mean": 0.0,
+                     "stddev": 0.001,
+                     "seed": 42
                   }
                },
                "bias_initializer": {
@@ -13487,7 +13757,7 @@
                "kernel_regularizer": {
                   "class_name": "L2",
                   "config": {
-                     "l2": 0.019999999552965164
+                     "l2": 0.0020000000949949026
                   }
                },
                "bias_regularizer": null,
@@ -13604,10 +13874,14 @@
                         "activation": "linear",
                         "use_bias": true,
                         "kernel_initializer": {
-                           "class_name": "GlorotUniform",
+                           "class_name": "VarianceScaling",
                            "config": {
-                              "seed": null
-                           }
+                              "scale": 2.0,
+                              "mode": "fan_out",
+                              "distribution": "truncated_normal",
+                              "seed": 42
+                           },
+                           "shared_object_id": 3
                         },
                         "bias_initializer": {
                            "class_name": "Zeros",
@@ -13754,10 +14028,14 @@
                         "activation": "linear",
                         "use_bias": true,
                         "kernel_initializer": {
-                           "class_name": "GlorotUniform",
+                           "class_name": "VarianceScaling",
                            "config": {
-                              "seed": null
-                           }
+                              "scale": 2.0,
+                              "mode": "fan_out",
+                              "distribution": "truncated_normal",
+                              "seed": 42
+                           },
+                           "shared_object_id": 3
                         },
                         "bias_initializer": {
                            "class_name": "Zeros",
@@ -13904,10 +14182,14 @@
                         "activation": "linear",
                         "use_bias": true,
                         "kernel_initializer": {
-                           "class_name": "GlorotUniform",
+                           "class_name": "VarianceScaling",
                            "config": {
-                              "seed": null
-                           }
+                              "scale": 2.0,
+                              "mode": "fan_out",
+                              "distribution": "truncated_normal",
+                              "seed": 42
+                           },
+                           "shared_object_id": 3
                         },
                         "bias_initializer": {
                            "class_name": "Zeros",

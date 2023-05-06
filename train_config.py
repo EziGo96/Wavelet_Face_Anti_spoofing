@@ -21,5 +21,5 @@ TRAIN_SPLIT = 0.8
 VAL_SPLIT = 0.1
 
 BS=64
-alpha=0.01
+alpha=0.1
 epochs=25
